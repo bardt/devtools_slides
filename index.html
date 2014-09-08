@@ -1,0 +1,624 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <title>Суперсилы Chrome Developer Tools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+</head>
+<body class="list">
+    <style>
+        .img_center {
+            max-width: 100%;
+            max-height: 439px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .gif_center {
+            height: 439px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .gif_center > img {
+            max-height: 100%;
+        }
+
+        .legend {
+            color: white;
+            padding: 2px .4em;
+            white-space: nowrap;
+            margin-right: 0.1em;
+        }
+        .legend.js {
+            background: rgba(230, 183, 79, 1);
+        }
+        .legend.style {
+            background: rgba(128, 115, 221, 1);
+        }
+        .legend.paint {
+            background: rgba(113, 158, 84, 1);
+        }
+    </style>
+
+    <header class="caption">
+        <h1>Суперсилы Chrome Developer Tools</h1>
+        <p>Роман Сальников</p>
+    </header>
+    <section class="slide" id="Cover"><div>
+        <h2>Суперсилы Chrome Developer Tools</h2>
+        <div id="ironman_front">
+            <div id="chrome_logo"></div>
+        </div>
+        <style>
+            #Cover h2 {
+
+                text-align: center;
+            }
+
+            #ironman_front {
+                position: absolute;
+                bottom: -486px;
+                right: 0;
+                margin-right: -127px;
+                width: 660px;
+                height: 1000px;
+                background: url(pictures/ironman_front.png) no-repeat transparent;
+                background-size: contain;
+            }
+
+            #chrome_logo {
+                position: absolute;
+                left: 50%;
+                top: 175px;
+                /* bottom: 322px; */
+                margin-left: -43px;
+                width: 100px;
+                height: 100px;
+                background: url(pictures/chrome_logo.png) no-repeat transparent;
+                background-size: contain;
+            }
+        </style>
+    </div></section>
+    <section class="slide cover">
+        <div class="dgis_screenshot">
+            <!-- <h2>2gis Online - изоморфное приложение</h2> -->
+
+        </div>
+        <style>
+            .dgis_screenshot {
+                background: url(pictures/2gis_screenshot.png) no-repeat top left;
+                background-size: contain;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>О чем этот доклад</h2>
+            <ul>
+                <li>О кайфе</li>
+                <li class="next">О времени</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Код проекта - черный ящик</h2>
+            <img src="pictures/black_box.png" alt="" style="max-width: 100%;">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>О чем этот доклад</h2>
+            <ul>
+                <li>О кайфе</li>
+                <li>О времени</li>
+                <li class="next">Об инструментах</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <img class="img_center" src="pictures/chrome_logo.png" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>DevTools обывателя</h2>
+            <img class="img_center" src="pictures/_devtools_usual.png" alt="">
+            <!-- <img id="usual_man" src="pictures/usual_man.png" height="285" width="240" alt=""> -->
+        </div>
+        <style>
+            #usual_man {
+                position: absolute;
+                bottom:0;
+                left: 0;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>DevTools профессионала</h2>
+            <img class="img_center" src="pictures/_devtools_super.png" alt="">
+            <!-- <img id="iron_man" src="pictures/iron_man.png" height="242" width="228" alt=""> -->
+        </div>
+        <style>
+            #iron_man {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Тренировочная площадка</h2>
+            <div class="gif_center">
+                <img src="pictures/overview.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="slide shout">
+        <div>
+            <h2>Отладка</h2>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Баг - элемент добавляется дважды</h2>
+            <div class="gif_center">
+                <img src="pictures/first_bug.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2><span style="text-decoration: line-through;">Хардкорная</span> обычная отладка</h2>
+            <ol>
+                <li>Ищем по проекту что-то похожее</li>
+                <li>Читаем код</li>
+                <li>Ставим console.log и/или брэйкпоинт</li>
+                <li>Повторяем</li>
+            </ol>
+        </div>
+    </section>
+    <section class="slide shout">
+        <div>
+            <h2>Есть кое-что мощнее</h2>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Умные брэйкпоинты</h2>
+            <ul>
+                <li>Изменения DOM</li>
+                <li>XHR запросы</li>
+                <li>Event Listeners</li>
+                <li>Workers</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Event Listeners</h2>
+            <div class="gif_center">
+                <img src="pictures/_event_listeners.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>DOM breakpoint</h2>
+            <div class="gif_center">
+                <img src="pictures/dom_breakpoint.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Асинхронные стэктрейсы</h2>
+            <p>Пробивают сквозь пространство и время</p>
+            <ul>
+                <li>setInterval</li>
+                <li>setTimeout</li>
+                <li>XMLHttpRequest</li>
+                <li>promises</li>
+                <li>requestAnimationFrame</li>
+                <li>и т.д, и т.п</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Обычный vs. Async стэктрейс</h2>
+            <div class="compare_stacktraces">
+                <div>
+                    <img src="pictures/stacktrace_usual.png" alt="">
+                </div>
+                <div>
+                    <img src="pictures/stacktrace_async.png" alt="">
+                </div>
+            </div>
+        </div>
+        <style>
+            .compare_stacktraces {
+                height: 439px;
+                display: inline-flex;
+                width: 100%;
+            }
+
+            .compare_stacktraces>div {
+                flex: 1 1 auto;
+                text-align: center;
+            }
+
+            .compare_stacktraces img {
+                width: 328px;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Async + breakpoints = &#10084;</h2>
+            <ol>
+                <li>Включаем Async stacktraces</li>
+                <li>Ловим результат бага (DOM, XHR breakpoints)</li>
+                <li>Можем вернуться к истокам проблемы</li>
+                <li>???</li>
+                <li>Profit</li>
+            </ol>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Async + breakpoints = &#10084;</h2>
+            <div class="gif_center">
+                <img src="pictures/_async_debug_workflow.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Отладка объектов JavaScript</h2>
+            <pre>
+                <code>var watchMe = {};</code>
+                <code>Object.observe(watchMe, function() {</code>
+                <code>    debugger;</code>
+                <code>});</code>
+                <code> </code>
+                <code>watchMe.foo = 'bar'; // выполнение останавливается</code>
+            </pre>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Snippets</h2>
+            <img src="pictures/snippet.png" alt="" class="img_center">
+        </div>
+    </section>
+    <!-- <section class="slide">
+        <div>
+            <h2>Console</h2>
+            <ul>
+                <li>$0</li>
+                <li>getEventListeners()</li>
+                <li>monitorEvents()</li>
+            </ul>
+        </div>
+    </section> -->
+    <section class="slide shout">
+        <div>
+            <h2>FPS</h2>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Страница заметно тормозит</h2>
+            <div class="gif_center">
+                <img src="pictures/overview.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Диагностика FPS</h2>
+            <ul>
+                <li>FPS meter</li>
+                <li>Timeline</li>
+                <li>Дальше могут быть варианты</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>FPS meter</h2>
+            <div class="gif_center">
+                <img src="pictures/fps.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Timeline</h2>
+            <div class="gif_center">
+                <img src="pictures/timeline_overview.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Timeline</h2>
+            <img class="img_center" src="pictures/timeline_screen.png" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Timeline</h2>
+            <ul>
+                <li><span class="legend js">JavaScript</span></li>
+                <li><span class="legend style">Recalculate Style</span>, <span class="legend style">Layout</span><!-- , <span class="legend style">Update Layer Tree</span> --></li>
+                <li><span class="legend paint">Paint</span><!-- , <span class="legend paint">Composite Layers</span> --></li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2><span class="legend style">Recalculate Style</span></h2>
+            <ul>
+                <li>Собирает все стили</li>
+                <li>Находит соответствие между селекторами и всеми элеметами DOM</li>
+                <li>Высчитывает Calculated Style для каждого элемента</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2><span class="legend style">Layout</span></h2>
+            <ul>
+                <li>Высчитывает геометрии элементов на основе стилей</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2><span class="legend paint">Paint</span></h2>
+            <ul>
+                <li>Преобразует все, что было подсчитано, в пиксели</li>
+                <li>Отрисовывает на экране</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Timeline</h2>
+            <img class="img_center" src="pictures/timeline_screen.png" alt="">
+        </div>
+    </section>
+    <section class="slide cover">
+        <div>
+            <img src="pictures/we-need-to-go-deeper.jpg" alt="" style="width: 100%">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>CPU profiler</h2>
+            <div class="gif_center">
+                <img src="pictures/cpu_profiling.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>CPU profiler (Heavy)</h2>
+            <img class="img_center" src="pictures/cpu_profiler_heavy.png" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>CPU profiler (Chart)</h2>
+            <img class="img_center" src="pictures/cpu_profiler_chart.png" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Диагностика FPS <span class="legend js">JavaScript</span></h2>
+            <ul>
+                <li>CPU Profiler Tree - дает снимок, не дает понимания динамики</li>
+                <li>CPU Profiler Chart - лучше, но сложно синхронизировать с Timeline</li>
+                <li>Canary Timeline</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Chrome Canary</h2>
+            <img class="img_center" src="pictures/canary_logo.png" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Прокачанный Timeline в Canary</h2>
+            <ul>
+                <li>Включить режим экспериментов DevTools в <code>chrome://flags</code></li>
+                <li>Включить дополнительные настройки<br/>
+                    <img src="pictures/timeline_settings.png" height="123" width="260" alt="">
+                </li>
+                <li>Наслаждаться результатом</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Прокачанный Timeline в Canary</h2>
+            <img class="img_center" src="pictures/timeline_canary.png" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Прокачанный Timeline в Canary</h2>
+            <img class="img_center" src="pictures/timeline_canary_zoom.png" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Диагностика FPS <span class="legend style">Styles</span></h2>
+            <img src="pictures/forced_layout.png" alt="" class="img_center">
+        </div>
+    </section>
+    <!-- <section class="slide">
+        <div>
+            <h2>Forced synchronous layout <span class="legend style">Styles</span></h2>
+            <p>Случается, когда читаем свойства лэйаута после его инвалидации. Приходится заново выполнять лэйаут.</p>
+            <h3></h3>
+        </div>
+    </section> -->
+    <section class="slide">
+        <div>
+            <h2>Мы поняли:</h2>
+            <ul>
+                <li>updateHeaderPosition - корень всех проблем</li>
+                <li>Из нее вызывается много тяжелого кода jQuery</li>
+                <li>Есть проблема с инвалидацией лэйаута</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>После отключения анимации шапки страницы</h2>
+            <img src="pictures/timeline_paint.png" alt="" class="img_center">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Диагностика FPS <span class="legend paint">Paint</span></h2>
+            <ul>
+                <li>Paint Rectangles - показывает, какая область экрана перерисовывается на каждом кадре.</li>
+                <li>Чем реже требуется перерисовка, тем лучше</li>
+                <li>Чем меньше область перерисовки, тем лучше</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Paint Rectangles</h2>
+            <div class="gif_center"><img src="pictures/paint_rectangles_before.gif" alt=""></div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Решение проблемы с перерисовкой</h2>
+            <div class="gif_center">
+                <img src="pictures/paint_fix.gif" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Timeline после всех изменений</h2>
+            <img src="pictures/paint_timeline_after.png" alt="" class="img_center">
+        </div>
+    </section>
+    <section class="slide">
+        <img id="hulk" src="pictures/hulk.png" alt="">
+        <style>
+            #hulk {
+                position: absolute;
+                height: 580px;
+                left: 250px;
+                bottom: 25px;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Так что же всё-таки делать с FPS?</h2>
+            <ul>
+                <li>FPS meter</li>
+                <li>Timeline</li>
+                <li><span class="legend js">JavaScript</span> CPU Profiler / Canary Timeline</li>
+                <li><span class="legend style">Styles</span> Обращаем внимание на предупреждения</li>
+                <li><span class="legend paint">Paint</span> Paint Rectangles, скрываем подозрительные элементы</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide shout">
+        <div>
+            <h2>Память</h2>
+        </div>
+    </section>
+    <section class="slide cover">
+        <img src="pictures/dead_chrome.png" height="640" width="1024" alt="">
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Timeline умеет показывать расходуемую память</h2>
+            <img src="pictures/timeline_memory_detailed.png" alt="" class="img_center">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Heap snapshots</h2>
+            <div class="gif_center"><img src="pictures/memory_profile.gif" alt=""></div>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Detached nodes</h2>
+            <img src="pictures/memory_detached_analysis.png" alt="" class="img_center">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <img src="pictures/memory_leak_cause.png" alt="" class="img_center">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>После устранения проблемы</h2>
+            <img src="pictures/timeline_memory_after.png" alt="" class="img_center">
+        </div>
+    </section>
+    <section class="slide shout">
+        <div>
+            <h2>Итоги</h2>
+        </div>
+    </section>
+    <section class="slide shout">
+        <div>
+            <a href="https://github.com/bardt/devtools_training_app">Пример из этой презентации (github)</a>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Если хочется еще deeper</h2>
+            <ul>
+                <li><a href="http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/?redirect_from_locale=ru">Debugging Asynchronous JavaScript with Chrome DevTools - Pearl Chen</a></li>
+                <li><a href="https://developer.chrome.com/devtools/docs/console">Using the Console</a></li>
+                <li><a href="https://www.youtube.com/watch?v=0xx_dkv9DEY">Advanced performance tooling in Chrome DevTools - Paul Irish</a></li>
+                <li><a href="https://speakerdeck.com/addyosmani/javascript-memory-management-masterclass">JavaScript Memory Management - Addy Osmani</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>К чему это все?</h2>
+            <ul>
+                <li class="next">Осваивайте инструменты, упрощающие вам жизнь</li>
+                <li class="next">Не растрачивайте время впустую</li>
+                <li class="next">Пишите больше фич и получайте от этого кайф</li>
+            </ul>
+        </div>
+    </section>
+
+    <p class="badge"><a href="https://github.com/shower/shower">Fork me on Github</a></p>
+    <!--
+        To hide progress bar from entire presentation
+        just remove “progress” element.
+        -->
+    <div class="progress"><div></div></div>
+    <script src="shower/shower.min.js"></script>
+    <!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+    <!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
