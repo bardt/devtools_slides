@@ -48,10 +48,23 @@
     </header>
     <section class="slide" id="Cover"><div>
         <h2>Суперсилы Chrome Developer Tools</h2>
+        <p class="about">
+            <div>Роман Сальников, 2ГИС</div>
+            <a href="mailto:r.salnikov@2gis.ru">r.salnikov@2gis.ru</a>
+        </p>
+        <div class="gisLogo"></div>
         <div id="ironman_front">
             <div id="chrome_logo"></div>
         </div>
         <style>
+            .gisLogo {
+                background: url(pictures/logo_black.svg) no-repeat center;
+                width:100px;
+                height:42px;
+                position:absolute;
+                left: 120px;
+                bottom: 60px;
+            }
             #Cover h2 {
 
                 text-align: center;
@@ -83,39 +96,72 @@
     </div></section>
     <section class="slide cover">
         <div class="dgis_screenshot">
-            <!-- <h2>2gis Online - изоморфное приложение</h2> -->
-
         </div>
         <style>
             .dgis_screenshot {
-                background: url(pictures/2gis_screenshot.png) no-repeat top left;
+                background: url(pictures/2gis_online_screenshot.png) no-repeat center;
                 background-size: contain;
             }
         </style>
     </section>
     <section class="slide">
         <div>
-            <h2>О чем этот доклад</h2>
-            <ul>
-                <li>О кайфе</li>
-                <li class="next">О времени</li>
-            </ul>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
             <h2>Код проекта - черный ящик</h2>
-            <img src="pictures/black_box.png" alt="" style="max-width: 100%;">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>О чем этот доклад</h2>
-            <ul>
-                <li>О кайфе</li>
-                <li>О времени</li>
-                <li class="next">Об инструментах</li>
-            </ul>
+            <table class="blackBox">
+                <tr class="blackBox__row">
+                    <td class="blackBox__cell">События</td>
+                    <td class="blackBox__cell blackBox__arrow">&#10132;</td>
+                    <td class="blackBox__cell blackBox__image" rowspan="3">?</td>
+                    <td class="blackBox__cell blackBox__arrow">&#10132;</td>
+                    <td class="blackBox__cell">Отрисовка</td>
+                </tr>
+                <tr class="blackBox__row">
+                    <td class="blackBox__cell">Внешние API</td>
+                    <td class="blackBox__cell blackBox__arrow">&#10132;</td>
+                    <!-- <td class="blackBox__cell"></td> -->
+                    <td class="blackBox__cell blackBox__arrow">&#10132;</td>
+                    <td class="blackBox__cell">Данные</td>
+                </tr>
+                <tr class="blackBox__row">
+                    <td class="blackBox__cell">Время</td>
+                    <td class="blackBox__cell blackBox__arrow">&#10132;</td>
+                    <!-- <td class="blackBox__cell"></td> -->
+                    <td class="blackBox__cell blackBox__arrow">&#10132;</td>
+                    <td class="blackBox__cell">Внешние API</td>
+                </tr>
+            </table>
+            <style>
+                .blackBox {
+                    margin-top: 80px !important;
+                }
+
+                .blackBox__row {
+                    border: none;
+                }
+
+                .blackBox__row .blackBox__cell{
+                    background: none;
+                }
+
+                .blackBox__row .blackBox__cell:first-child {
+                    text-align: right;
+                }
+
+                .blackBox__arrow {
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+                .blackBox__cell.blackBox__image {
+                    width: 150px;
+                    height: 150px;
+                    background: black !important;
+                    vertical-align: middle;
+                    text-align: center;
+                    font-size: 200%;
+                    color: white;
+                }
+            </style>
         </div>
     </section>
     <section class="slide">
@@ -154,22 +200,18 @@
     <section class="slide">
         <div>
             <h2>Тренировочная площадка</h2>
-            <div class="gif_center">
-                <img src="pictures/overview.gif" alt="">
-            </div>
+            <a target="_blank" href="http://bardt.github.io/devtools_training_app/"><img src="pictures/training_screenshot.png" height="439" width="784" alt=""></a>
         </div>
     </section>
     <section class="slide shout">
         <div>
-            <h2>Отладка</h2>
+            <h2>1. Отладка</h2>
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>Баг - элемент добавляется дважды</h2>
-            <div class="gif_center">
-                <img src="pictures/first_bug.gif" alt="">
-            </div>
+            <img src="pictures/double_addition_bug.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
@@ -202,22 +244,18 @@
     <section class="slide">
         <div>
             <h2>Event Listeners</h2>
-            <div class="gif_center">
-                <img src="pictures/_event_listeners.gif" alt="">
-            </div>
+            <img src="pictures/event_listeners.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>DOM breakpoint</h2>
-            <div class="gif_center">
-                <img src="pictures/dom_breakpoint.gif" alt="">
-            </div>
+            <img src="pictures/dom_breakpoint.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
-            <h2>Асинхронные стэктрейсы</h2>
+            <h2>Асинхронные коллстэки</h2>
             <p>Пробивают сквозь пространство и время</p>
             <ul>
                 <li>setInterval</li>
@@ -231,13 +269,15 @@
     </section>
     <section class="slide">
         <div>
-            <h2>Обычный vs. Async стэктрейс</h2>
+            <h2>Обычный vs. Async коллстэк</h2>
             <div class="compare_stacktraces">
                 <div>
-                    <img src="pictures/stacktrace_usual.png" alt="">
+                    Коллстэк курильщика
+                    <img src="pictures/callstack_usual.png" alt="">
                 </div>
                 <div>
-                    <img src="pictures/stacktrace_async.png" alt="">
+                    Коллстэк здорового человека
+                    <img src="pictures/callstack_async.png" alt="">
                 </div>
             </div>
         </div>
@@ -262,7 +302,7 @@
         <div>
             <h2>Async + breakpoints = &#10084;</h2>
             <ol>
-                <li>Включаем Async stacktraces</li>
+                <li>Включаем Async call stack</li>
                 <li>Ловим результат бага (DOM, XHR breakpoints)</li>
                 <li>Можем вернуться к истокам проблемы</li>
                 <li>???</li>
@@ -273,9 +313,30 @@
     <section class="slide">
         <div>
             <h2>Async + breakpoints = &#10084;</h2>
-            <div class="gif_center">
-                <img src="pictures/_async_debug_workflow.gif" alt="">
-            </div>
+            <img src="pictures/async_debug_workflow_1.png" height="439" width="784" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Async + breakpoints = &#10084;</h2>
+            <img src="pictures/async_debug_workflow_2.png" height="439" width="784" alt="">
+        </div>
+    </section>
+    <section class="slide shout">
+        <div>
+            <h2>Console</h2>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>$0 + getEventListeners</h2>
+            <img src="pictures/getEventListeners.png" height="439" width="784" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Events</h2>
+            <img src="pictures/console_api_1.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
@@ -287,7 +348,7 @@
                 <code>    debugger;</code>
                 <code>});</code>
                 <code> </code>
-                <code>watchMe.foo = 'bar'; // выполнение останавливается</code>
+                <code>watchMe.foo = 'bar'; <mark class="comment">// выполнение останавливается</mark></code>
             </pre>
         </div>
     </section>
@@ -297,59 +358,48 @@
             <img src="pictures/snippet.png" alt="" class="img_center">
         </div>
     </section>
-    <!-- <section class="slide">
+    <section class="slide">
         <div>
-            <h2>Console</h2>
+            <h2>Инструменты для отладки</h2>
             <ul>
-                <li>$0</li>
-                <li>getEventListeners()</li>
-                <li>monitorEvents()</li>
+                <li>Умные брэйкпоинты</li>
+                <li>Async call stack</li>
+                <li>Console API</li>
             </ul>
         </div>
-    </section> -->
+    </section>
     <section class="slide shout">
         <div>
-            <h2>FPS</h2>
+            <h2>2. FPS</h2>
         </div>
     </section>
-    <section class="slide">
+    <section class="slide shout">
         <div>
             <h2>Страница заметно тормозит</h2>
-            <div class="gif_center">
-                <img src="pictures/overview.gif" alt="">
-            </div>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Диагностика FPS</h2>
-            <ul>
-                <li>FPS meter</li>
-                <li>Timeline</li>
-                <li>Дальше могут быть варианты</li>
-            </ul>
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>FPS meter</h2>
-            <div class="gif_center">
-                <img src="pictures/fps.gif" alt="">
-            </div>
+            <img src="pictures/fps_meter.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>Timeline</h2>
-            <div class="gif_center">
-                <img src="pictures/timeline_overview.gif" alt="">
-            </div>
+            <img src="pictures/timeline_1.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>Timeline</h2>
-            <img class="img_center" src="pictures/timeline_screen.png" alt="">
+            <img src="pictures/timeline_2.png" height="439" width="784"  alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Timeline</h2>
+            <img src="pictures/timeline_3.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
@@ -367,7 +417,7 @@
             <h2><span class="legend style">Recalculate Style</span></h2>
             <ul>
                 <li>Собирает все стили</li>
-                <li>Находит соответствие между селекторами и всеми элеметами DOM</li>
+                <li>Находит соответствие между элеметами DOM и селекторами</li>
                 <li>Высчитывает Calculated Style для каждого элемента</li>
             </ul>
         </div>
@@ -392,32 +442,47 @@
     <section class="slide">
         <div>
             <h2>Timeline</h2>
-            <img class="img_center" src="pictures/timeline_screen.png" alt="">
+            <img src="pictures/timeline_3.png" height="461" width="784" alt="">
         </div>
     </section>
-    <section class="slide cover">
+    <section class="slide">
         <div>
-            <img src="pictures/we-need-to-go-deeper.jpg" alt="" style="width: 100%">
+            <div class="go_deeper"></div>
+            <style>
+                .go_deeper {
+                    width: 100%;
+                    height: 100%;
+                    background: url(pictures/we-need-to-go-deeper.jpg) center no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            </style>
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>CPU profiler</h2>
-            <div class="gif_center">
-                <img src="pictures/cpu_profiling.gif" alt="">
-            </div>
+            <img src="pictures/cpu_profiler_1.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>CPU profiler (Heavy)</h2>
-            <img class="img_center" src="pictures/cpu_profiler_heavy.png" alt="">
+            <img src="pictures/cpu_profiler_2_hl.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>CPU profiler (Chart)</h2>
-            <img class="img_center" src="pictures/cpu_profiler_chart.png" alt="">
+            <img src="pictures/cpu_profiler_3.png" height="439" width="784" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>CPU profiler (Chart)</h2>
+            <img src="pictures/cpu_profiler_3_hl.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
@@ -426,19 +491,17 @@
             <ul>
                 <li>CPU Profiler Tree - дает снимок, не дает понимания динамики</li>
                 <li>CPU Profiler Chart - лучше, но сложно синхронизировать с Timeline</li>
-                <li>Canary Timeline</li>
             </ul>
         </div>
     </section>
     <section class="slide">
         <div>
-            <h2>Chrome Canary</h2>
             <img class="img_center" src="pictures/canary_logo.png" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
-            <h2>Прокачанный Timeline в Canary</h2>
+            <h2>Прокачанный Timeline</h2>
             <ul>
                 <li>Включить режим экспериментов DevTools в <code>chrome://flags</code></li>
                 <li>Включить дополнительные настройки<br/>
@@ -450,14 +513,26 @@
     </section>
     <section class="slide">
         <div>
-            <h2>Прокачанный Timeline в Canary</h2>
-            <img class="img_center" src="pictures/timeline_canary.png" alt="">
+            <h2>Прокачанный Timeline</h2>
+            <img src="pictures/canary_timeline.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
-            <h2>Прокачанный Timeline в Canary</h2>
-            <img class="img_center" src="pictures/timeline_canary_zoom.png" alt="">
+            <h2>Прокачанный Timeline</h2>
+            <img src="pictures/canary_timeline_hl.png" height="439" width="784" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Прокачанный Timeline</h2>
+            <img src="pictures/canary_timeline_zoom.png" height="439" width="784" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Прокачанный Timeline</h2>
+            <img src="pictures/canary_timeline_zoom_hl.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
@@ -466,13 +541,77 @@
             <img src="pictures/forced_layout.png" alt="" class="img_center">
         </div>
     </section>
-    <!-- <section class="slide">
+    <section class="slide">
         <div>
             <h2>Forced synchronous layout <span class="legend style">Styles</span></h2>
-            <p>Случается, когда читаем свойства лэйаута после его инвалидации. Приходится заново выполнять лэйаут.</p>
-            <h3></h3>
+            <div>
+                <div>Bad way</div>
+                <div class="flow">
+                    <div class="flow__item block">Изменяем<br>размеры A</div>
+                    <div class="flow__item">&#10132;</div>
+                    <div class="flow__item style warn">Invalidate<br>layout</div>
+                    <div class="flow__item">&#10132;</div>
+                    <div class="flow__item block">Получаем<br>размеры</div>
+                    <div class="flow__item">&#10132;</div>
+                    <div class="flow__item style warn">Layout</div>
+                    <div class="flow__item">&#10132;</div>
+                    <div class="flow__item block">Изменяем<br>размеры B</div>
+                    <div class="flow__item">&#10132;</div>
+                    <div class="flow__item">...</div>
+                </div>
+            </div>
+
+            <div class="next">
+                <div>Good way</div>
+                <div class="flow">
+                    <div class="flow__item block">Получаем<br><strong>все</strong> размеры</div>
+                    <div class="flow__item">&#10132;</div>
+                    <div class="flow__item block">Изменяем<br><strong>все</strong> размеры</div>
+                    <div class="flow__item">&#10132;</div>
+                    <div class="flow__item style">Invalidate<br>layout</div>
+                    <!-- <div class="flow__item">&#10132;</div>
+                    <div class="flow__item style">Recalculate<br>styles</div> -->
+                    <div class="flow__item">&#10132;</div>
+                    <div class="flow__item style">Layout</div>
+                    <div class="flow__item">&#10132;</div>
+                    <div class="flow__item">...</div>
+                </div>
+            </div>
+            <style>
+                .flow {
+                    display: inline-flex;
+                    align-items: center;
+                    width: 100%;
+                }
+
+                .flow__item {
+                    flex: 1 1 auto;
+                    text-align: center;
+                    padding: 0.1em;
+                    line-height: 1.5em;
+                }
+
+                .flow__item.style {
+                    color: white;
+                    background: rgba(128, 115, 221, 1);
+                }
+
+                .flow__item.block {
+                    border: 1px solid black;
+                }
+
+                .flow__item.warn {
+                    border: 3px solid red;
+                }
+            </style>
         </div>
-    </section> -->
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Диагностика FPS <span class="legend style">Styles</span></h2>
+            <img src="pictures/forced_layout_hl.png" alt="" class="img_center">
+        </div>
+    </section>
     <section class="slide">
         <div>
             <h2>Мы поняли:</h2>
@@ -485,8 +624,48 @@
     </section>
     <section class="slide">
         <div>
-            <h2>После отключения анимации шапки страницы</h2>
-            <img src="pictures/timeline_paint.png" alt="" class="img_center">
+            <pre>
+                <code>function getHeaderOffset() {</code>
+                <code>    return $(window).scrollTop()</code>
+                <code>           - $('#pageHeader').<mark>offset()</mark>.top;</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <pre>
+                <code>$('#pageHeaderText').<mark>css</mark>({</code>
+                <code>    top: headerHeight/2 - (<mark>getHeaderOffset()</mark> / 2)</code>
+                <code>});</code>
+                <code>...</code>
+                <code>$('.letter').<mark>animate</mark>({</code>
+                <code>    paddingLeft: <mark>getHeaderOffset()</mark> / 10,</code>
+                <code>    paddingRight: <mark>getHeaderOffset()</mark> / 10</code>
+                <code>}, 0);</code>
+            </pre>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <pre>
+                <code>var headerOffset = <mark>getHeaderOffset()</mark>;</code>
+                <code>var destPadding = headerOffset / 10;</code>
+                <code>...</code>
+                <code>$('#pageHeaderText').<mark>css</mark>({</code>
+                <code>    top: headerHeight/2 - (headerOffset / 2)</code>
+                <code>});</code>
+                <code>$('.letter').<mark>css</mark>({</code>
+                <code>    paddingLeft: destPadding,</code>
+                <code>    paddingRight: destPadding</code>
+                <code>});</code>
+            </pre>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>После исправления анимации</h2>
+            <img src="pictures/timeline_after.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
@@ -502,21 +681,25 @@
     <section class="slide">
         <div>
             <h2>Paint Rectangles</h2>
-            <div class="gif_center"><img src="pictures/paint_rectangles_before.gif" alt=""></div>
+            <img src="pictures/repaint.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>Решение проблемы с перерисовкой</h2>
-            <div class="gif_center">
-                <img src="pictures/paint_fix.gif" alt="">
-            </div>
+            <img src="pictures/repaint_fix_1.png" height="439" width="784" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Решение проблемы с перерисовкой</h2>
+            <img src="pictures/repaint_fix_2.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>Timeline после всех изменений</h2>
-            <img src="pictures/paint_timeline_after.png" alt="" class="img_center">
+            <img src="pictures/timeline_after_all.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
@@ -544,7 +727,7 @@
     </section>
     <section class="slide shout">
         <div>
-            <h2>Память</h2>
+            <h2>3. Память</h2>
         </div>
     </section>
     <section class="slide cover">
@@ -553,19 +736,31 @@
     <section class="slide">
         <div>
             <h2>Timeline умеет показывать расходуемую память</h2>
-            <img src="pictures/timeline_memory_detailed.png" alt="" class="img_center">
+            <img src="pictures/memory_before_fix.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>Heap snapshots</h2>
-            <div class="gif_center"><img src="pictures/memory_profile.gif" alt=""></div>
+            <img src="pictures/heap_intro.png" height="439" width="784" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Heap snapshots</h2>
+            <img src="pictures/heap_first.png" height="439" width="784" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Heap snapshots</h2>
+            <img src="pictures/heap_compare.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>Detached nodes</h2>
-            <img src="pictures/memory_detached_analysis.png" alt="" class="img_center">
+            <img src="pictures/heap_detached.png" height="439" width="784" alt="">
         </div>
     </section>
     <section class="slide">
@@ -576,7 +771,18 @@
     <section class="slide">
         <div>
             <h2>После устранения проблемы</h2>
-            <img src="pictures/timeline_memory_after.png" alt="" class="img_center">
+            <img src="pictures/memory_after_fix.png" height="461" width="784" alt="">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Память</h2>
+            <ul>
+                <li>Изолируем проблему</li>
+                <li>Проверяем с помощью Timeline (forced GC)</li>
+                <li>Определяем, что искать</li>
+                <li>Сравниваем до/после через Heap Snapshots</li>
+            </ul>
         </div>
     </section>
     <section class="slide shout">
@@ -584,19 +790,56 @@
             <h2>Итоги</h2>
         </div>
     </section>
-    <section class="slide shout">
+    <section class="slide">
         <div>
-            <a href="https://github.com/bardt/devtools_training_app">Пример из этой презентации (github)</a>
+            <h2>Chrome DevTools помогает</h2>
+            <ul>
+                <li>Отлаживать</li>
+                <li class="next">Изучать незнакомый код</li>
+                <li class="next">Искать проблемы с производительностью</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Пример из этой презентации</h2>
+            <a href="https://github.com/bardt/devtools_training_app">https://github.com/bardt/devtools_training_app</a>
+            <p>Пул-реквесты приветствуются. Сделаем этот проект еще хуже!</p>
         </div>
     </section>
     <section class="slide">
         <div>
             <h2>Если хочется еще deeper</h2>
+            <h3>Отладка</h3>
             <ul>
                 <li><a href="http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/?redirect_from_locale=ru">Debugging Asynchronous JavaScript with Chrome DevTools - Pearl Chen</a></li>
                 <li><a href="https://developer.chrome.com/devtools/docs/console">Using the Console</a></li>
+                <li><a href="https://developer.chrome.com/devtools/docs/javascript-debugging#breakpoints-on-javascript-event-listeners">Breakpoints on JavaScript Event Listeners</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Если хочется еще deeper</h2>
+            <h3>FPS и память</h3>
+            <ul>
                 <li><a href="https://www.youtube.com/watch?v=0xx_dkv9DEY">Advanced performance tooling in Chrome DevTools - Paul Irish</a></li>
+                <li><a href="http://www.youtube.com/watch?v=R6TXuXV1bbY">Parallax Performance [CSSConfUS2014] - Paul Irish</a></li>
                 <li><a href="https://speakerdeck.com/addyosmani/javascript-memory-management-masterclass">JavaScript Memory Management - Addy Osmani</a></li>
+                <li><a href="https://plus.google.com/+NatDuca/posts/BvMgvdnBvaQ?e=-RedirectToSandbox">GPU boundedness - Nat Duca</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Firefox</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Debugging">Debugging with Firefox</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/Apps/Build/Performance/Performance_fundamentals">Performance fundamentals</a></li>
+            </ul>
+            <h2>Opera</h2>
+            <ul>
+                <li><a href="http://www.opera.com/dragonfly/documentation/">Dragonfly documentation</a></li>
             </ul>
         </div>
     </section>
@@ -608,6 +851,11 @@
                 <li class="next">Не растрачивайте время впустую</li>
                 <li class="next">Пишите больше фич и получайте от этого кайф</li>
             </ul>
+        </div>
+    </section>
+    <section class="slide shout">
+        <div>
+            <h2>Спасибо!</h2>
         </div>
     </section>
 
