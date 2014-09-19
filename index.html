@@ -9,6 +9,32 @@
 </head>
 <body class="list">
     <style>
+        .slide.screenshot {
+
+        }
+
+        .slide.title {
+
+        }
+
+        .slide.title h2 {
+            text-align: center;
+            margin-top: 180px;
+        }
+
+        .slide.screenshot:after {
+            display: none;
+        }
+
+        .slide.screenshot > img,
+        .slide.screenshot > a > img {
+            width:100%;
+            height: auto;
+            position: absolute;
+            left: 0;
+            bottom: 34px;
+        }
+
         .img_center {
             max-width: 100%;
             max-height: 439px;
@@ -40,6 +66,11 @@
         .legend.paint {
             background: rgba(113, 158, 84, 1);
         }
+
+        .section_header {
+            /*color: #afca48 !important;*/
+            color: #00a8ca !important;
+        }
     </style>
 
     <header class="caption">
@@ -49,8 +80,7 @@
     <section class="slide" id="Cover"><div>
         <h2>Суперсилы Chrome Developer Tools</h2>
         <p class="about">
-            <div>Роман Сальников, 2ГИС</div>
-            <a href="mailto:r.salnikov@2gis.ru">r.salnikov@2gis.ru</a>
+            <div>Роман Сальников</div>
         </p>
         <div class="gisLogo"></div>
         <div id="ironman_front">
@@ -67,7 +97,7 @@
             }
             #Cover h2 {
 
-                text-align: center;
+                text-align: left;
             }
 
             #ironman_front {
@@ -106,7 +136,7 @@
     </section>
     <section class="slide">
         <div>
-            <h2>Код проекта - черный ящик</h2>
+            <h2>Код проекта &#8211; черный ящик</h2>
             <table class="blackBox">
                 <tr class="blackBox__row">
                     <td class="blackBox__cell">События</td>
@@ -169,50 +199,39 @@
             <img class="img_center" src="pictures/chrome_logo.png" alt="">
         </div>
     </section>
-    <section class="slide">
+    <section class="slide title">
         <div>
-            <h2>DevTools обывателя</h2>
-            <img class="img_center" src="pictures/_devtools_usual.png" alt="">
-            <!-- <img id="usual_man" src="pictures/usual_man.png" height="285" width="240" alt=""> -->
+            <h2>DevTools обывателя и профессионала</h2>
         </div>
-        <style>
-            #usual_man {
-                position: absolute;
-                bottom:0;
-                left: 0;
-            }
-        </style>
     </section>
-    <section class="slide">
-        <div>
-            <h2>DevTools профессионала</h2>
-            <img class="img_center" src="pictures/_devtools_super.png" alt="">
-            <!-- <img id="iron_man" src="pictures/iron_man.png" height="242" width="228" alt=""> -->
-        </div>
-        <style>
-            #iron_man {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-            }
-        </style>
+    <section class="slide screenshot">
+        <img style="bottom: auto; top: 0" src="pictures/_devtools_usual_.png" alt="">
     </section>
-    <section class="slide">
+    <section class="slide screenshot">
+        <img style="bottom: auto; top: 0" src="pictures/_devtools_super_.png" alt="">
+    </section>
+    <section class="slide title">
         <div>
             <h2>Тренировочная площадка</h2>
-            <a target="_blank" href="http://bardt.github.io/devtools_training_app/"><img src="pictures/training_screenshot.png" height="439" width="784" alt=""></a>
         </div>
+    </section>
+    <section class="slide screenshot">
+        <a target="_blank" href="http://bardt.github.io/devtools_training_app/">
+            <img src="pictures/training_screenshot.png" height="439" width="784" alt="">
+        </a>
     </section>
     <section class="slide shout">
         <div>
-            <h2>1. Отладка</h2>
+            <h2 class="section_header">1. Отладка</h2>
         </div>
     </section>
-    <section class="slide">
+    <section class="slide title">
         <div>
-            <h2>Баг - элемент добавляется дважды</h2>
-            <img src="pictures/double_addition_bug.png" height="439" width="784" alt="">
+            <h2>Баг &#8211; элемент добавляется дважды</h2>
         </div>
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/double_addition_bug.png" height="439" width="784" alt="">
     </section>
     <section class="slide">
         <div>
@@ -241,17 +260,21 @@
             </ul>
         </div>
     </section>
-    <section class="slide">
+    <section class="slide title">
         <div>
             <h2>Event Listeners</h2>
-            <img src="pictures/event_listeners.png" height="439" width="784" alt="">
         </div>
     </section>
-    <section class="slide">
+    <section class="slide screenshot">
+        <img src="pictures/event_listeners.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide title">
         <div>
-            <h2>DOM breakpoint</h2>
-            <img src="pictures/dom_breakpoint.png" height="439" width="784" alt="">
+            <h2>DOM Breakpoints</h2>
         </div>
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/dom_breakpoint.png" height="439" width="784" alt="">
     </section>
     <section class="slide">
         <div>
@@ -300,48 +323,45 @@
     </section>
     <section class="slide">
         <div>
-            <h2>Async + breakpoints = &#10084;</h2>
+            <h2>Async + Breakpoints = &#10084;</h2>
             <ol>
-                <li>Включаем Async call stack</li>
-                <li>Ловим результат бага (DOM, XHR breakpoints)</li>
+                <li>Включаем Async Call Stack</li>
+                <li>Ловим результат бага (DOM, XHR Breakpoints)</li>
                 <li>Можем вернуться к истокам проблемы</li>
                 <li>???</li>
                 <li>Profit</li>
             </ol>
         </div>
     </section>
-    <section class="slide">
-        <div>
-            <h2>Async + breakpoints = &#10084;</h2>
-            <img src="pictures/async_debug_workflow_1.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/async_debug_workflow_1.png" height="439" width="784" alt="">
     </section>
-    <section class="slide">
-        <div>
-            <h2>Async + breakpoints = &#10084;</h2>
-            <img src="pictures/async_debug_workflow_2.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/async_debug_workflow_2.png" height="439" width="784" alt="">
     </section>
     <section class="slide shout">
         <div>
             <h2>Console</h2>
         </div>
     </section>
-    <section class="slide">
+    <section class="slide title">
         <div>
             <h2>$0 + getEventListeners</h2>
-            <img src="pictures/getEventListeners.png" height="439" width="784" alt="">
         </div>
     </section>
-    <section class="slide">
-        <div>
-            <h2>Events</h2>
-            <img src="pictures/console_api_1.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/getEventListeners.png" height="439" width="784" alt="">
     </section>
-    <section class="slide">
+    <section class="slide screenshot">
+        <img src="pictures/console_api_1.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide title">
         <div>
             <h2>Отладка объектов JavaScript</h2>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
             <pre>
                 <code>var watchMe = {};</code>
                 <code>Object.observe(watchMe, function() {</code>
@@ -351,26 +371,29 @@
                 <code>watchMe.foo = 'bar'; <mark class="comment">// выполнение останавливается</mark></code>
             </pre>
         </div>
+
     </section>
-    <section class="slide">
+    <section class="slide title">
         <div>
             <h2>Snippets</h2>
-            <img src="pictures/snippet.png" alt="" class="img_center">
         </div>
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/snippet.png" alt="">
     </section>
     <section class="slide">
         <div>
             <h2>Инструменты для отладки</h2>
             <ul>
                 <li>Умные брэйкпоинты</li>
-                <li>Async call stack</li>
+                <li>Async Call Stack</li>
                 <li>Console API</li>
             </ul>
         </div>
     </section>
     <section class="slide shout">
         <div>
-            <h2>2. FPS</h2>
+            <h2 class="section_header">2. FPS</h2>
         </div>
     </section>
     <section class="slide shout">
@@ -378,29 +401,27 @@
             <h2>Страница заметно тормозит</h2>
         </div>
     </section>
-    <section class="slide">
+    <section class="slide title">
         <div>
             <h2>FPS meter</h2>
-            <img src="pictures/fps_meter.png" height="439" width="784" alt="">
         </div>
     </section>
-    <section class="slide">
+    <section class="slide screenshot">
+        <img src="pictures/fps_meter.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide title">
         <div>
             <h2>Timeline</h2>
-            <img src="pictures/timeline_1.png" height="439" width="784" alt="">
         </div>
     </section>
-    <section class="slide">
-        <div>
-            <h2>Timeline</h2>
-            <img src="pictures/timeline_2.png" height="439" width="784"  alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/timeline_1.png" height="439" width="784" alt="">
     </section>
-    <section class="slide">
-        <div>
-            <h2>Timeline</h2>
-            <img src="pictures/timeline_3.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/timeline_2.png" height="439" width="784"  alt="">
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/timeline_3.png" height="439" width="784" alt="">
     </section>
     <section class="slide">
         <div>
@@ -439,11 +460,8 @@
             </ul>
         </div>
     </section>
-    <section class="slide">
-        <div>
-            <h2>Timeline</h2>
-            <img src="pictures/timeline_3.png" height="461" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/timeline_3.png" height="461" width="784" alt="">
     </section>
     <section class="slide">
         <div>
@@ -461,36 +479,29 @@
             </style>
         </div>
     </section>
-    <section class="slide">
+    <section class="slide title">
         <div>
             <h2>CPU profiler</h2>
-            <img src="pictures/cpu_profiler_1.png" height="439" width="784" alt="">
         </div>
     </section>
-    <section class="slide">
-        <div>
-            <h2>CPU profiler (Heavy)</h2>
-            <img src="pictures/cpu_profiler_2_hl.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/cpu_profiler_1.png" height="439" width="784" alt="">
     </section>
-    <section class="slide">
-        <div>
-            <h2>CPU profiler (Chart)</h2>
-            <img src="pictures/cpu_profiler_3.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/cpu_profiler_2_hl.png" height="439" width="784" alt="">
     </section>
-    <section class="slide">
-        <div>
-            <h2>CPU profiler (Chart)</h2>
-            <img src="pictures/cpu_profiler_3_hl.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/cpu_profiler_3.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/cpu_profiler_3_hl.png" height="439" width="784" alt="">
     </section>
     <section class="slide">
         <div>
             <h2>Диагностика FPS <span class="legend js">JavaScript</span></h2>
             <ul>
-                <li>CPU Profiler Tree - дает снимок, не дает понимания динамики</li>
-                <li>CPU Profiler Chart - лучше, но сложно синхронизировать с Timeline</li>
+                <li>CPU Profiler Tree &#8211; дает снимок, не дает понимания динамики</li>
+                <li>CPU Profiler Chart &#8211; лучше, но сложно синхронизировать с Timeline</li>
             </ul>
         </div>
     </section>
@@ -511,29 +522,17 @@
             </ul>
         </div>
     </section>
-    <section class="slide">
-        <div>
-            <h2>Прокачанный Timeline</h2>
-            <img src="pictures/canary_timeline.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/canary_timeline.png" height="439" width="784" alt="">
     </section>
-    <section class="slide">
-        <div>
-            <h2>Прокачанный Timeline</h2>
-            <img src="pictures/canary_timeline_hl.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/canary_timeline_hl.png" height="439" width="784" alt="">
     </section>
-    <section class="slide">
-        <div>
-            <h2>Прокачанный Timeline</h2>
-            <img src="pictures/canary_timeline_zoom.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/canary_timeline_zoom.png" height="439" width="784" alt="">
     </section>
-    <section class="slide">
-        <div>
-            <h2>Прокачанный Timeline</h2>
-            <img src="pictures/canary_timeline_zoom_hl.png" height="439" width="784" alt="">
-        </div>
+    <section class="slide screenshot">
+        <img src="pictures/canary_timeline_zoom_hl.png" height="439" width="784" alt="">
     </section>
     <section class="slide">
         <div>
@@ -541,6 +540,309 @@
             <img src="pictures/forced_layout.png" alt="" class="img_center">
         </div>
     </section>
+    <section class="slide">
+        <div>
+            <h2>Диагностика FPS <span class="legend style">Styles</span></h2>
+            <img src="pictures/forced_layout_hl.png" alt="" class="img_center">
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Мы поняли</h2>
+            <ul>
+                <li>updateHeaderPosition &#8211; корень всех проблем</li>
+                <li>Из нее вызывается много тяжелого кода jQuery</li>
+                <li>Есть проблема с инвалидацией лэйаута</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <pre>
+                <code>function getHeaderOffset() {</code>
+                <code>    return $(window).scrollTop()</code>
+                <code>           - $('#pageHeader').<mark>offset()</mark>.top;</code>
+                <code>}</code>
+            </pre>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <pre>
+                <code><mark class="comment">// updateHeaderPosition</mark></code>
+                <code>$('#pageHeaderText').<mark>css</mark>({</code>
+                <code>    top: headerHeight/2 - (<mark>getHeaderOffset()</mark> / 2)</code>
+                <code>});</code>
+                <code>...</code>
+                <code>$('.letter').<mark>animate</mark>({</code>
+                <code>    paddingLeft: <mark>getHeaderOffset()</mark> / 10,</code>
+                <code>    paddingRight: <mark>getHeaderOffset()</mark> / 10</code>
+                <code>}, 0);</code>
+            </pre>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <pre>
+                <code>var headerOffset = <mark>getHeaderOffset()</mark>;</code>
+                <code>var destPadding = headerOffset / 10;</code>
+                <code>...</code>
+                <code>$('#pageHeaderText').<mark>css</mark>({</code>
+                <code>    top: headerHeight/2 - (headerOffset / 2)</code>
+                <code>});</code>
+                <code>$('.letter').<mark>css</mark>({</code>
+                <code>    paddingLeft: destPadding,</code>
+                <code>    paddingRight: destPadding</code>
+                <code>});</code>
+            </pre>
+        </div>
+    </section>
+    <section class="slide title">
+        <div>
+            <h2>После исправления анимации</h2>
+        </div>
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/timeline_after.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Диагностика FPS <span class="legend paint">Paint</span></h2>
+            <ul>
+                <li>Paint Rectangles &#8211; показывает, какая область экрана перерисовывается на каждом кадре.</li>
+                <li>Чем реже требуется перерисовка, тем лучше</li>
+                <li>Чем меньше область перерисовки, тем лучше</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide screenshot">
+            <img src="pictures/repaint.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide title">
+        <div>
+            <h2>Решение проблемы с перерисовкой</h2>
+        </div>
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/repaint_fix_1.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/repaint_fix_2.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide title">
+        <div>
+            <h2>Timeline после всех изменений</h2>
+        </div>
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/timeline_after_all.png" height="439" width="784" alt="">
+        <div class="next"><img id="hulk" src="pictures/hulk.png" alt=""></div>
+        <style>
+            #hulk {
+                position: absolute;
+                height: 380px;
+                left: 400px;
+                bottom: 25px;
+            }
+        </style>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Так что же всё-таки делать с FPS?</h2>
+            <ul>
+                <li>Убедиться, что есть проблема, с помощью FPS meter</li>
+                <li>Записать активность в Timeline</li>
+                <li><span class="legend js">JavaScript</span> CPU Profiler / Canary Timeline</li>
+                <li><span class="legend style">Styles</span> Обращать внимание на предупреждения</li>
+                <li><span class="legend paint">Paint</span> Paint Rectangles, скрыть подозрительные элементы</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide shout">
+        <div>
+            <h2 class="section_header">3. Память</h2>
+        </div>
+    </section>
+    <section class="slide cover">
+        <img src="pictures/dead_chrome.png" height="640" width="1024" alt="">
+    </section>
+    <section class="slide title">
+        <div>
+            <h2>Timeline показывает память</h2>
+        </div>
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/memory_before_fix.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/memory_before_fix_gc.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide title">
+        <div>
+            <h2>Heap Snapshots</h2>
+        </div>
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/heap_intro.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/heap_first.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/heap_compare_hl.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide title">
+        <div>
+            <h2>Detached Nodes</h2>
+        </div>
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/heap_detached.png" height="439" width="784" alt="">
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/memory_leak_cause.png" height="636" width="1027" alt="">
+    </section>
+    <section class="slide title">
+        <div>
+            <h2>После устранения проблемы</h2>
+        </div>
+    </section>
+    <section class="slide screenshot">
+        <img src="pictures/memory_after_fix.png" height="461" width="784" alt="">
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Память</h2>
+            <ul>
+                <li>Изолируем проблему</li>
+                <li>Проверяем с помощью Timeline (forced GC)</li>
+                <li>Определяем, что искать</li>
+                <li>Сравниваем до/после через Heap Snapshots</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide shout">
+        <div>
+            <h2 class="section_header">4. Итоги</h2>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Chrome DevTools помогает</h2>
+            <ul>
+                <li>Отлаживать</li>
+                <li class="next">Изучать незнакомый код</li>
+                <li class="next">Искать проблемы с производительностью</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Пример из этой презентации</h2>
+            <a href="https://github.com/bardt/devtools_training_app">https://github.com/bardt/devtools_training_app</a>
+            <p>Пул-реквесты приветствуются. Сделаем этот проект еще хуже!</p>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Если хочется еще deeper</h2>
+            <h3>Отладка</h3>
+            <ul>
+                <li><a href="http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/?redirect_from_locale=ru">Debugging Asynchronous JavaScript with Chrome DevTools &#8211; Pearl Chen</a></li>
+                <li><a href="https://developer.chrome.com/devtools/docs/console">Using the Console</a></li>
+                <li><a href="https://developer.chrome.com/devtools/docs/javascript-debugging#breakpoints-on-javascript-event-listeners">Breakpoints on JavaScript Event Listeners</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Если хочется еще deeper</h2>
+            <h3>FPS и память</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=0xx_dkv9DEY">Advanced Performance Tooling in Chrome DevTools &#8211; Paul Irish</a></li>
+                <li><a href="http://www.youtube.com/watch?v=R6TXuXV1bbY">Parallax Performance [CSSConfUS2014] &#8211; Paul Irish</a></li>
+                <li><a href="https://speakerdeck.com/addyosmani/javascript-memory-management-masterclass">JavaScript Memory Management &#8211; Addy Osmani</a></li>
+                <li><a href="https://plus.google.com/+NatDuca/posts/BvMgvdnBvaQ?e=-RedirectToSandbox">GPU Boundedness &#8211; Nat Duca</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>Firefox</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Debugging">Debugging with Firefox</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/Apps/Build/Performance/Performance_fundamentals">Performance fundamentals</a></li>
+            </ul>
+            <h2>Opera</h2>
+            <ul>
+                <li><a href="http://www.opera.com/dragonfly/documentation/">Dragonfly documentation</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide">
+        <div>
+            <h2>К чему это все?</h2>
+            <ul>
+                <li class="next">Осваивайте инструменты, упрощающие вам жизнь</li>
+                <li class="next">Не растрачивайте время впустую</li>
+                <li class="next">Пишите больше фич и получайте от этого кайф</li>
+            </ul>
+        </div>
+    </section>
+    <section class="slide shout">
+        <div>
+            <h2>Спасибо!</h2>
+        </div>
+    </section>
+    <section class="slide" id="BackCover"><div>
+        <h2>Суперсилы Chrome Developer Tools</h2>
+        <p class="about">
+            <div>Роман Сальников</div>
+            <div><a href="mailto:r.salnikov@2gis.ru">r.salnikov@2gis.ru</a></div>
+            <div><a href="http://techno.2gis.ru">techno.2gis.ru</a></div>
+        </p>
+        <div class="gisLogo"></div>
+        <div id="ironman_front_back">
+            <div id="chrome_logo_back"></div>
+        </div>
+        <style>
+            .gisLogo {
+                background: url(pictures/logo_black.svg) no-repeat center;
+                width:100px;
+                height:42px;
+                position:absolute;
+                left: 120px;
+                bottom: 60px;
+            }
+            #BackCover h2 {
+
+                text-align: left;
+            }
+
+            #ironman_front_back {
+                position: absolute;
+                bottom: -486px;
+                right: 0;
+                margin-right: -127px;
+                width: 660px;
+                height: 1000px;
+                background: url(pictures/ironman_front.png) no-repeat transparent;
+                background-size: contain;
+            }
+
+            #chrome_logo_back {
+                position: absolute;
+                left: 50%;
+                top: 175px;
+                /* bottom: 322px; */
+                margin-left: -43px;
+                width: 100px;
+                height: 100px;
+                background: url(pictures/chrome_logo.png) no-repeat transparent;
+                background-size: contain;
+            }
+        </style>
+    </div></section>
     <section class="slide">
         <div>
             <h2>Forced synchronous layout <span class="legend style">Styles</span></h2>
@@ -604,258 +906,6 @@
                     border: 3px solid red;
                 }
             </style>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Диагностика FPS <span class="legend style">Styles</span></h2>
-            <img src="pictures/forced_layout_hl.png" alt="" class="img_center">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Мы поняли:</h2>
-            <ul>
-                <li>updateHeaderPosition - корень всех проблем</li>
-                <li>Из нее вызывается много тяжелого кода jQuery</li>
-                <li>Есть проблема с инвалидацией лэйаута</li>
-            </ul>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <pre>
-                <code>function getHeaderOffset() {</code>
-                <code>    return $(window).scrollTop()</code>
-                <code>           - $('#pageHeader').<mark>offset()</mark>.top;</code>
-                <code>}</code>
-            </pre>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <pre>
-                <code>$('#pageHeaderText').<mark>css</mark>({</code>
-                <code>    top: headerHeight/2 - (<mark>getHeaderOffset()</mark> / 2)</code>
-                <code>});</code>
-                <code>...</code>
-                <code>$('.letter').<mark>animate</mark>({</code>
-                <code>    paddingLeft: <mark>getHeaderOffset()</mark> / 10,</code>
-                <code>    paddingRight: <mark>getHeaderOffset()</mark> / 10</code>
-                <code>}, 0);</code>
-            </pre>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <pre>
-                <code>var headerOffset = <mark>getHeaderOffset()</mark>;</code>
-                <code>var destPadding = headerOffset / 10;</code>
-                <code>...</code>
-                <code>$('#pageHeaderText').<mark>css</mark>({</code>
-                <code>    top: headerHeight/2 - (headerOffset / 2)</code>
-                <code>});</code>
-                <code>$('.letter').<mark>css</mark>({</code>
-                <code>    paddingLeft: destPadding,</code>
-                <code>    paddingRight: destPadding</code>
-                <code>});</code>
-            </pre>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>После исправления анимации</h2>
-            <img src="pictures/timeline_after.png" height="439" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Диагностика FPS <span class="legend paint">Paint</span></h2>
-            <ul>
-                <li>Paint Rectangles - показывает, какая область экрана перерисовывается на каждом кадре.</li>
-                <li>Чем реже требуется перерисовка, тем лучше</li>
-                <li>Чем меньше область перерисовки, тем лучше</li>
-            </ul>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Paint Rectangles</h2>
-            <img src="pictures/repaint.png" height="439" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Решение проблемы с перерисовкой</h2>
-            <img src="pictures/repaint_fix_1.png" height="439" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Решение проблемы с перерисовкой</h2>
-            <img src="pictures/repaint_fix_2.png" height="439" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Timeline после всех изменений</h2>
-            <img src="pictures/timeline_after_all.png" height="439" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <img id="hulk" src="pictures/hulk.png" alt="">
-        <style>
-            #hulk {
-                position: absolute;
-                height: 580px;
-                left: 250px;
-                bottom: 25px;
-            }
-        </style>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Так что же всё-таки делать с FPS?</h2>
-            <ul>
-                <li>FPS meter</li>
-                <li>Timeline</li>
-                <li><span class="legend js">JavaScript</span> CPU Profiler / Canary Timeline</li>
-                <li><span class="legend style">Styles</span> Обращаем внимание на предупреждения</li>
-                <li><span class="legend paint">Paint</span> Paint Rectangles, скрываем подозрительные элементы</li>
-            </ul>
-        </div>
-    </section>
-    <section class="slide shout">
-        <div>
-            <h2>3. Память</h2>
-        </div>
-    </section>
-    <section class="slide cover">
-        <img src="pictures/dead_chrome.png" height="640" width="1024" alt="">
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Timeline умеет показывать расходуемую память</h2>
-            <img src="pictures/memory_before_fix.png" height="439" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Heap snapshots</h2>
-            <img src="pictures/heap_intro.png" height="439" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Heap snapshots</h2>
-            <img src="pictures/heap_first.png" height="439" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Heap snapshots</h2>
-            <img src="pictures/heap_compare.png" height="439" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Detached nodes</h2>
-            <img src="pictures/heap_detached.png" height="439" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <img src="pictures/memory_leak_cause.png" alt="" class="img_center">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>После устранения проблемы</h2>
-            <img src="pictures/memory_after_fix.png" height="461" width="784" alt="">
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Память</h2>
-            <ul>
-                <li>Изолируем проблему</li>
-                <li>Проверяем с помощью Timeline (forced GC)</li>
-                <li>Определяем, что искать</li>
-                <li>Сравниваем до/после через Heap Snapshots</li>
-            </ul>
-        </div>
-    </section>
-    <section class="slide shout">
-        <div>
-            <h2>Итоги</h2>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Chrome DevTools помогает</h2>
-            <ul>
-                <li>Отлаживать</li>
-                <li class="next">Изучать незнакомый код</li>
-                <li class="next">Искать проблемы с производительностью</li>
-            </ul>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Пример из этой презентации</h2>
-            <a href="https://github.com/bardt/devtools_training_app">https://github.com/bardt/devtools_training_app</a>
-            <p>Пул-реквесты приветствуются. Сделаем этот проект еще хуже!</p>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Если хочется еще deeper</h2>
-            <h3>Отладка</h3>
-            <ul>
-                <li><a href="http://www.html5rocks.com/en/tutorials/developertools/async-call-stack/?redirect_from_locale=ru">Debugging Asynchronous JavaScript with Chrome DevTools - Pearl Chen</a></li>
-                <li><a href="https://developer.chrome.com/devtools/docs/console">Using the Console</a></li>
-                <li><a href="https://developer.chrome.com/devtools/docs/javascript-debugging#breakpoints-on-javascript-event-listeners">Breakpoints on JavaScript Event Listeners</a></li>
-            </ul>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Если хочется еще deeper</h2>
-            <h3>FPS и память</h3>
-            <ul>
-                <li><a href="https://www.youtube.com/watch?v=0xx_dkv9DEY">Advanced performance tooling in Chrome DevTools - Paul Irish</a></li>
-                <li><a href="http://www.youtube.com/watch?v=R6TXuXV1bbY">Parallax Performance [CSSConfUS2014] - Paul Irish</a></li>
-                <li><a href="https://speakerdeck.com/addyosmani/javascript-memory-management-masterclass">JavaScript Memory Management - Addy Osmani</a></li>
-                <li><a href="https://plus.google.com/+NatDuca/posts/BvMgvdnBvaQ?e=-RedirectToSandbox">GPU boundedness - Nat Duca</a></li>
-            </ul>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>Firefox</h2>
-            <ul>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Debugging">Debugging with Firefox</a></li>
-                <li><a href="https://developer.mozilla.org/en-US/Apps/Build/Performance/Performance_fundamentals">Performance fundamentals</a></li>
-            </ul>
-            <h2>Opera</h2>
-            <ul>
-                <li><a href="http://www.opera.com/dragonfly/documentation/">Dragonfly documentation</a></li>
-            </ul>
-        </div>
-    </section>
-    <section class="slide">
-        <div>
-            <h2>К чему это все?</h2>
-            <ul>
-                <li class="next">Осваивайте инструменты, упрощающие вам жизнь</li>
-                <li class="next">Не растрачивайте время впустую</li>
-                <li class="next">Пишите больше фич и получайте от этого кайф</li>
-            </ul>
-        </div>
-    </section>
-    <section class="slide shout">
-        <div>
-            <h2>Спасибо!</h2>
         </div>
     </section>
 
